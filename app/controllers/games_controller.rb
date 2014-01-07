@@ -15,7 +15,7 @@ class GamesController < ApplicationController
      ["","","","","","","","",""], 
      ["","","","","","","","",""]]
   
-    a = (1..9).to_a #fills an array with 1-9
+    a = (1..9).to_a # fills an array with 1-9
 
     (0..6).step(3) do |r|  # iterates every three of rows
       (0..6).step(3) do |c| # iterates every three columns
@@ -23,8 +23,6 @@ class GamesController < ApplicationController
       end
     end
   end
-
-  # Create is a new game that for each place on the board (0..8), it puts 
 
   def create # the save
     @game = Game.new
