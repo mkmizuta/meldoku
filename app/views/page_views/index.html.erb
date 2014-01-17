@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Meldoku Analytics</title>
+      <style type="text/css" media="screen">
+        body {
+          background: #66CDAA;
+        }
+        
+        .canvas {
+          background: #fff;
+          border: 1px solid #000;
+          padding: 10px;
+        }
+
+        table {
+        border-collapse: collapse;
+        border: 1px solid #FF0000;
+        background: #fff;
+        width: auto;
+        }
+
+        table td {
+        border: 1px solid #000;
+        }
+
+      </style>
+  </head>
+  <body>
+    <h1>Meldoku Analytics</h1>
+      <br>
+   <!--  <div class="right-col"> -->
+    <table style="padding:20px;width:auto;">
+      <thead style="font-weight: bold;">
+      <tr>
+        <td># of Page Views</td>
+        <td># of Unique Visitors</td>
+        <td># of Visitors (defined as sessions)</td>
+        <td># of Unique User Agents</td>
+      </tr>
+      </thead>
+      <tr>
+        <td id="new"><%= @page_views.count %></td>
+        <td id="return"> 
+          <%= @page_views.map { | array | array.ip_address }.uniq.count %> 
+        </td>
+        <td><%= @page_views.map { | array | array.session }.uniq.count %></td>
+        <td>
+          <%= @page_views.map { | array | array.user_agent }.uniq.count %> 
+          (<% @page_views.map { | array | array.user_agent }.uniq.each do | browser |%>
+            
+            <% if browser.include? "Chrome" %>
+              Chrome
+              <span id="chrome">
+                <%= @page_views.where("user_agent LIKE '%Chrome%'").count %>
+              </span>
+            <% elsif browser.include? "Firefox" %>
+              Firefox
+              <span id="firefox">
+                <%= @page_views.where("user_agent LIKE '%Firefox%'").count %>
+              </span>
+            <% elsif browser.include? "Safari" %> 
+              Safari
+              <span id="safari">
+                <%= @page_views.where("user_agent LIKE '%Safari%'").where.not("user_agent LIKE '%Chrome%'").count %>
+              </span>
+            <% else %>
+              Other
+            <% end %>
+          <% end %>)
+        </td>
+      </tr>
+    </table>
+<!-- </div> -->
+
+
+<br>
+<br>
+
+  <canvas id='canvas1' class='canvas' width=300 height=200></canvas>
+
+
+  <canvas id='canvas2' class='canvas' width=300 height=200></canvas>
+  
+<br>
+<br>
+<br>
+  <h2>Last 10 Page Views</h2><br>
+  <table style="padding:20px;width:auto;">
+    <thead style="font-weight: bold;">
+      <tr>
+        <td>Referer</td> <!-- Referer tells how user accessed page  -->
+        <td>Session</td> 
+        <td>IP Address</td>
+        <td>User Agent</td> <!-- User Agent is the type of browser -->
+        <td>Created At</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @page_views.last(10).each do | view |  %>
+        <tr>
+          <td><%= view.referer %></td> 
+          <td><%= view.session %></td>
+          <td><%= view.ip_address %></td>
+          <td>
+            <% if view.user_agent.include? "Chrome" %>
+              Chrome
+            <% elsif view.user_agent.include? "Firefox" %>
+              Firefox
+            <% elsif view.user_agent.include? "Safari" %> 
+              Safari
+            <% else %>
+              Other
+            <% end %>
+          </td>
+          <td><%= view.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </body>
+</html>

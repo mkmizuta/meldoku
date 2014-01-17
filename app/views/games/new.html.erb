@@ -1,10 +1,10 @@
-<!DOCUMENT html>
+<!DOCTYPE html>
   <head>
     <title>
       Mel's Sudoku
     </title>
     <link rel="stylesheet" type="text/css" href="main.css">
-    </head>
+  </head>
   <body>
     <h1>MELDOKU</h1>
       <div style= "text-align: center">
@@ -117,6 +117,17 @@
           </table>
           <button>Check Board</button>
         </form>
-    </div>
+      </div>
+    <table>
+      <tr>
+        <td><%= link_to 'About Meldoku', about_path(@about) %></td>
+        <td>
+          <a href="mailto:mkmizuta@gmail.com?Subject=Meldoku%20" target="_top">Contact</a>
+        </td>
+        <td>
+          <a href="http://adadevelopersacademy.org/">About Ada Developers Academy</a>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

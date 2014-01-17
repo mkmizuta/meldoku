@@ -2,13 +2,23 @@
 <html>
   <head>
     <title>Meldoku</title>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "page_views", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-
-    <%= yield %>
-
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <hr>
+      <a href="http://github.com/mkmizuta"><%= image_tag "github.png" %></a>
+      <a href="http://www.linkedin.com/pub/melinda-mizuta/7/5b5/365"><%= image_tag "linkedin.png" %></a>
+      <a href="https://twitter.com/mkmizuta"><%= image_tag "twitter.png" %></a>
+      <br />
+      <div style="margin-top:20px">
+        Copyright © 2014 Melinda Mizuta. All rights reserved.
+      </div>
+    </div>
   </body>
 </html>
