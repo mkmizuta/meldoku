@@ -8,15 +8,15 @@
     If you haven't played sudoku before, here's how it works.
   </p>
   <p>
-    The goal is to have numbers 1 through 9 represented in each row, column and block.  Because there are exactly nine spaces in each row, column and block, this means there aren't any duplications within each respective field.
+    The goal is to have numbers 1 through 9 represented in each row, column and block.  Because there are exactly nine tiles in each row, column and block, this means there aren't any duplications within each respective field.
   </p>
   <p>
     <h3>What a row looks like:</h3>
-    Rows are identified as nine spaces horizontally.  There are nine rows per board.
+    Rows are identified as nine tiles horizontally.  There are nine rows per board.
   </p>
   <p>
     <h3>What a column looks like:</h3>
-    Columns are identified as nine space vertically.  There are nine columns per board.
+    Columns are identified as nine tiles vertically.  There are nine columns per board.
   </p>
   <p>
     <h3>What a block looks like:</h3>
@@ -24,21 +24,14 @@
   </p>
   <p>
     <h3>How to play:</h3>
-    The board comes set with nine numbers already in place.  To play, click on an individual square and type a number that you think fits. Then, click "Check Board" to see how many are correct. You can enter as many numbers as you'd like before you "Check Board." Meldoku will save answers that meet the criteria, and return empty squares for those that do not.  
+    The board comes set with nine numbers already in place.  To play, click on an individual tile and type a number that you think fits. Then, click "Check Board" to see how many are correct. You can enter as many numbers as you'd like before you "Check Board." Meldoku will save answers that meet the criteria, and return empty tiles for those that do not.  
   </p>
   <p>
     <h3>About the Meldoku app:</h3>
-    Meldoku was created in response to an Ada Developers Academy winter break project assignment.  The Meldoku app is a sudoku checker, meaning that as long as your solutions meet the criteria of what rows, columns and blocks look like, then it could be correct.  Similar to pen and paper sudoku puzzles, you could have nearly every square filled and then realize that 
+    Meldoku was created for an <a href="http://www.adadevelopersacademy.org/">Ada Developers Academy</a> winter break project assignment.  The Meldoku app is a sudoku checker, meaning that as long as your solutions meet the criteria of what rows, columns and blocks look like, then it could be correct.  Similar to pen and paper sudoku puzzles, you could have nearly every tile filled and then realize that your combination doesn't work.  With Meldoku, you can easily replace any tile, and continue to check the board, until it does.  Have fun!
   </p>
-  <table>
-    <tr>
-      <td><%= link_to 'Start a Game', 'games/new' %></td>
-      <td>
-        <a href="mailto:mkmizuta@gmail.com?Subject=Meldoku%20" target="_top">Contact</a>
-      </td>
-      <td>
-        <a href="http://adadevelopersacademy.org/">About Ada Developers Academy</a>
-      </td>
-    </tr>
-  </table>
+  <br>
+  <p style="text-align: center; font-size: 14pt; font-family: Helvetica; font-weight: bold">
+    <%= link_to 'Start a Game', 'games/new' %> 
+  </p>
 </html>

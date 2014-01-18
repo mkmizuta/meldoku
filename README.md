@@ -1,6 +1,9 @@
 meldoku
 =======
 
-Mel's Sudoku App
+Mel's Sudoku App with Javascript Analytics
 
-Play it here: http://young-wildwood-2748.herokuapp.com/games/new
+Get info here: http://young-wildwood-2748.herokuapp.com/about
+
+Access analytics at:
+http://young-wildwood-2748.herokuapp.com/pageinfo

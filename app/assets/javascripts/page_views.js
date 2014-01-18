@@ -79,6 +79,7 @@
 
   var context = canvas.getContext( '2d' );
   var drawBarRect = function( height, color, xCoord ){
+    
     context.beginPath();
 
     var rectWidth = 50;
@@ -101,8 +102,12 @@
   var safari = parseInt( safari.innerHTML, 10 );
   
   drawBarRect( chrome, "powderblue", 20 );
-  drawBarRect( firefox, "green", 140 );
-  drawBarRect( safari, "peru", 80 );
-
+  drawBarRect( firefox, "mediumseagreen", 80 );
+  drawBarRect( safari, "peru", 140 );
+  
+  context.fillStyle = "black";
+  context.fillText("Chrome", 27, 190 );
+  context.fillText("Firefox", 90, 190 );
+  context.fillText("Safari", 150, 190 );
   });  
 })();

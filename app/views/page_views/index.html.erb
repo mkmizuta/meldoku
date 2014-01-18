@@ -29,8 +29,7 @@
   </head>
   <body>
     <h1>Meldoku Analytics</h1>
-      <br>
-   <!--  <div class="right-col"> -->
+    <br>
     <table style="padding:20px;width:auto;">
       <thead style="font-weight: bold;">
       <tr>
@@ -48,39 +47,29 @@
         <td><%= @page_views.map { | array | array.session }.uniq.count %></td>
         <td>
           <%= @page_views.map { | array | array.user_agent }.uniq.count %> 
-          (<% @page_views.map { | array | array.user_agent }.uniq.each do | browser |%>
-            
-            <% if browser.include? "Chrome" %>
-              Chrome
-              <span id="chrome">
-                <%= @page_views.where("user_agent LIKE '%Chrome%'").count %>
-              </span>
-            <% elsif browser.include? "Firefox" %>
-              Firefox
-              <span id="firefox">
-                <%= @page_views.where("user_agent LIKE '%Firefox%'").count %>
-              </span>
-            <% elsif browser.include? "Safari" %> 
-              Safari
-              <span id="safari">
-                <%= @page_views.where("user_agent LIKE '%Safari%'").where.not("user_agent LIKE '%Chrome%'").count %>
-              </span>
-            <% else %>
-              Other
-            <% end %>
-          <% end %>)
+          (
+            Chrome
+            <span id="chrome">
+              <%= @page_views.where("user_agent LIKE '%Chrome%'").count %>
+            </span>
+            Firefox
+            <span id="firefox">
+              <%= @page_views.where("user_agent LIKE '%Firefox%'").count %>
+            </span>
+            Safari
+            <span id="safari">
+              <%= @page_views.where("user_agent LIKE '%Safari%'").where.not("user_agent LIKE '%Chrome%'").count %>
+            </span>
+            Other
+         )
         </td>
       </tr>
     </table>
-<!-- </div> -->
-
 
 <br>
 <br>
 
   <canvas id='canvas1' class='canvas' width=300 height=200></canvas>
-
-
   <canvas id='canvas2' class='canvas' width=300 height=200></canvas>
   
 <br>

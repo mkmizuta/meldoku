@@ -3,7 +3,6 @@
     <title>
       Mel's Sudoku
     </title>
-    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
     <h1>MELDOKU</h1>
@@ -118,16 +117,8 @@
           <button>Check Board</button>
         </form>
       </div>
-    <table>
-      <tr>
-        <td><%= link_to 'About Meldoku', about_path(@about) %></td>
-        <td>
-          <a href="mailto:mkmizuta@gmail.com?Subject=Meldoku%20" target="_top">Contact</a>
-        </td>
-        <td>
-          <a href="http://adadevelopersacademy.org/">About Ada Developers Academy</a>
-        </td>
-      </tr>
-    </table>
+        <p style="margin-top: 80px; margin-bottom: 30px; text-align: center; font-size: 12pt; font-family: Helvetica">
+          <%= link_to 'About Meldoku', about_path(@about) %>
+        </p>
   </body>
 </html>
