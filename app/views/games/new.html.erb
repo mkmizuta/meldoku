@@ -1,10 +1,9 @@
-<!DOCUMENT html>
+<!DOCTYPE html>
   <head>
     <title>
       Mel's Sudoku
     </title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    </head>
+  </head>
   <body>
     <h1>MELDOKU</h1>
       <div style= "text-align: center">
@@ -117,6 +116,9 @@
           </table>
           <button>Check Board</button>
         </form>
-    </div>
+      </div>
+        <p style="margin-top: 80px; margin-bottom: 30px; text-align: center; font-size: 12pt; font-family: Helvetica">
+          <%= link_to 'About Meldoku', about_path(@about) %>
+        </p>
   </body>
 </html>

@@ -6,7 +6,8 @@ gem 'rails', '4.0.1'
 
 # Use sqlite3 as the database for Active Record
 # gem 'pg' since heroku doesn't support sqlite3
-gem 'sqlite3'
+# gem 'sqlite3'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -30,8 +31,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :production, :staging do
-      gem 'pg'
-      gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :doc do
@@ -39,8 +40,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development do
+group :development, :test do
   gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'sqlite3'
 end
 
 # Use ActiveModel has_secure_password

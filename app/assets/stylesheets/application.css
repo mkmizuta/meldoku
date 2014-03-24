@@ -1,27 +1,15 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
-
-/*
 =======
 general
 =======
 */
 
 body {
-  margin: 0px;
+  margin: 75px 100px;
   padding: 0px;
   background: #66CDAA;
+  font-size: 15px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 button {
@@ -33,11 +21,25 @@ button {
 }
 
 h1 {
-  font-size:40px;
+  font-size: 30px;
   font-family: Helvetica, Arial, sans-serif;
   text-align: center;
   margin: 0px;
 }
+
+h2 {
+  font-size: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin: 0px;
+}
+
+h3 {
+  font-size: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0px;
+}
+
 
 /* 
 ============
@@ -95,3 +97,19 @@ body goodies
   border-left: 2px solid black;
 }
 
+/*
+======
+footer
+======
+*/
+
+#footer {
+  margin: 10px auto; 
+  padding-top:10px;
+  text-align: center;
+  font-family: Helvetica, sans-serif; 
+  font-size: 11px; 
+  line-height: 0px;
+  background: #66CDAA; 
+  clear: both;
+}

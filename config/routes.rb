@@ -2,6 +2,10 @@ Meldoku::Application.routes.draw do
 
   resources :games
   post "games/create"
+  get "about", to: "games#about"
+  get "pageinfo", to: "page_views#index"
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
