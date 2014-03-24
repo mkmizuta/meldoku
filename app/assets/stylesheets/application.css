@@ -58,3 +58,40 @@ body goodies
   font-family: Helvetica, Arial, sans-serif;
   text-align: center;
 }
+
+.border-t {
+  border-top: 2px solid black;
+}
+
+.border-r {
+  border-right: 2px solid black;
+}
+
+.border-b {
+  border-bottom: 2px solid black;
+}
+
+.border-l {
+  border-left: 2px solid black;
+}
+
+.border-tr {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.border-tl {
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.border-br {
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.border-bl {
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+

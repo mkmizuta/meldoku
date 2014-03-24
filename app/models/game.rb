@@ -2,10 +2,10 @@ class Game < ActiveRecord::Base
   serialize :board, Array
  
   validate :board_is_valid
+  after_initialize :emptyboard
 
-  # after_initialize creates a board that has empty strings.
-
-  def after_initialize
+  # emptyboard creates a board that has empty strings.
+  def emptyboard
     self.board = [
      ["","","","","","","","",""], 
      ["","","","","","","","",""], 
@@ -18,10 +18,29 @@ class Game < ActiveRecord::Base
      ["","","","","","","","",""]]
   end
 
-  # check_line takes in a row/line, and if there aren't nine numbers, it returns false.  
+  def new_game
+    a = (1..9).to_a # fills an array with 1-9
 
+    (0..6).step(3) do |r|  # iterates every three of rows
+      (0..6).step(3) do |c| # iterates every three columns
+        self.board[r][c] = a.delete_at(rand(a.size)) # pulls one thing out of a randomly, and deletes it so it can't be repeated and puts in space [r][c].
+      end
+    end
+  end
+
+  def update_board(params)
+    row_names = ("a".."i").to_a # an array of row names listed on new view
+    col_name = (1..9).to_a # an array of column names listed on new view
+
+    (0..8).each do |r| # iterate spaces 0-8 on board's rows
+      (0..8).each do |c| # iterates spaces 0-8 on board's columns
+        self.board[r][c] = params[(row_names[r]+col_name[c].to_s).to_sym] # makes name from taking row name and column name and changes it to symbol which will match [r][c] params we return. .to_sym so that params can find it.
+      end
+    end
+  end
+
+  # check_line takes in a row/line, and if there aren't nine numbers, it returns false.
   # (1..9).each takes the range 1-9 and checks to see if each number in that range is included.  If each number 1-9 isn't included, it returns false.
-
   def check_line(line)
     if line.count != 9
       return false
@@ -79,6 +98,3 @@ class Game < ActiveRecord::Base
     return true
   end
 end
-
-
-  
